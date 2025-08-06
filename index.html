@@ -152,3 +152,106 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Free Fire Rewards</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      padding: 20px;
+    }
+    input[type="text"] {
+      padding: 10px;
+      width: 250px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 5px;
+    }
+    .bundle {
+      background-color: #222;
+      border: 1px solid #444;
+      border-radius: 10px;
+      display: inline-block;
+      margin: 15px;
+      padding: 10px;
+      width: 180px;
+    }
+    .bundle img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .bundle button {
+      background-color: #ffcc00;
+      color: #000;
+      padding: 10px 15px;
+      border: none;
+      margin-top: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    #popup {
+      position: fixed;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #fff;
+      color: #000;
+      padding: 30px;
+      border-radius: 10px;
+      display: none;
+      z-index: 999;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎁 Free Fire Rewards 🎁</h1>
+    <input type="text" id="uid" placeholder="Enter your Free Fire UID" />
+
+    <div class="bundle">
+      <img src="https://i.imgur.com/5YbR5aD.jpg" alt="Cobra Bundle">
+      <p>Cobra Bundle</p>
+      <button onclick="claimReward()">Claim Now</button>
+    </div>
+
+    <div class="bundle">
+      <img src="https://i.imgur.com/NjDRAOW.jpg" alt="MP40 Skin">
+      <p>MP40 Crazy Bunny</p>
+      <button onclick="claimReward()">Claim Now</button>
+    </div>
+
+    <div class="bundle">
+      <img src="https://i.imgur.com/mSH0Z1N.jpg" alt="Diamonds">
+      <p>1000 Diamonds Pack</p>
+      <button onclick="claimReward()">Claim Now</button>
+    </div>
+
+    <div id="popup">🎉 Congratulations! Reward Claimed 🎉</div>
+  </div>
+
+  <script>
+    function claimReward() {
+      let uid = document.getElementById("uid").value;
+      if (uid === "") {
+        alert("Please enter your Free Fire UID first.");
+        return;
+      }
+      document.getElementById("popup").style.display = "block";
+      setTimeout(() => {
+        document.getElementById("popup").style.display = "none";
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
