@@ -28,72 +28,163 @@
   <style>
     body {
       margin: 0;
-      background-color: #0f0f0f;
+      background: linear-gradient(to bottom, #0f0f0f, #1c1c1c);
       font-family: Arial, sans-serif;
       color: white;
       text-align: center;
     }
+
     header {
-      background-color: #1a1a1a;
+      background: #111;
       padding: 20px;
-      font-size: 24px;
-      color: #ffcc00;
+      font-size: 28px;
+      font-weight: bold;
     }
-    .container {
+
+    .uid-section {
+      margin: 20px auto;
+    }
+
+    .uid-section input {
+      padding: 10px;
+      width: 250px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .rewards-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       padding: 20px;
     }
+
     .reward-card {
-      background-color: #1c1c1c;
-      margin: 15px auto;
-      padding: 15px;
+      background: #222;
       border-radius: 10px;
-      max-width: 300px;
-      box-shadow: 0 0 10px #ffcc00;
+      margin: 15px;
+      padding: 15px;
+      width: 200px;
+      box-shadow: 0 0 10px #000;
     }
+
     .reward-card img {
       width: 100%;
-      border-radius: 10px;
-    }
-    .reward-card button {
-      margin-top: 10px;
-      background-color: #ffcc00;
-      color: black;
-      border: none;
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
+      height: 160px;
+      object-fit: cover;
       border-radius: 5px;
     }
-    .reward-card button:hover {
-      background-color: #ffaa00;
+
+    .reward-card h3 {
+      margin: 10px 0;
+      font-size: 18px;
+    }
+
+    .reward-card button {
+      padding: 10px 15px;
+      background: #00c853;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #1e1e1e;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #00ff88;
+      z-index: 9999;
+    }
+
+    .popup h2 {
+      color: #00ff88;
+      margin-bottom: 15px;
+    }
+
+    .popup button {
+      padding: 8px 20px;
+      margin-top: 10px;
+      background: #444;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      z-index: 9998;
     }
   </style>
 </head>
 <body>
 
-<header>
-  🎮 Welcome to Free Fire Rewards 🎁
-</header>
+  <header>🎁 Naruto Chapter 2 Rewards 🎁</header>
 
-<div class="container">
-  <div class="reward-card">
-    <img src="https://i.imgur.com/5YbR5aD.jpg" alt="Cobra Bundle">
-    <h3>Itachi Bundle</h3>
-    <button>Claim Now</button>
+  <div class="uid-section">
+    <input type="text" id="uidInput" placeholder="Enter your Free Fire UID">
   </div>
 
-  <div class="reward-card">
-    <img src="https://i.imgur.com/NjDRAOW.jpg" alt="MP40 Skin">
-    <h3>Uchiha's Legacy MP40</h3>
-    <button>Claim Now</button>
+  <div class="rewards-container">
+    <!-- Reward Block Example -->
+    <div class="reward-card">
+      <img src="https://via.placeholder.com/200x160?text=Itachi+Bundle" alt="Itachi Bundle">
+      <h3>Itachi Bundle</h3>
+      <button onclick="claimReward()">Claim Now</button>
+    </div>
+
+    <div class="reward-card">
+      <img src="https://via.placeholder.com/200x160?text=MP40+Skin" alt="MP40 Skin">
+      <h3>MP40 Gun Skin</h3>
+      <button onclick="claimReward()">Claim Now</button>
+    </div>
+
+    <div class="reward-card">
+      <img src="https://via.placeholder.com/200x160?text=2000+Diamonds" alt="2000 Diamonds">
+      <h3>2000 Diamonds</h3>
+      <button onclick="claimReward()">Claim Now</button>
+    </div>
+    <!-- Add more blocks as needed -->
   </div>
 
-  <div class="reward-card">
-    <img src="https://i.imgur.com/mSH0Z1N.jpg" alt="Diamond Pack">
-    <h3>Diamond Pack</h3>
-    <button>Claim Now</button>
+  <!-- Fake Popup -->
+  <div class="overlay" id="overlay"></div>
+  <div class="popup" id="popup">
+    <h2>🎉 Congratulations!</h2>
+    <p>Your reward has been claimed successfully.</p>
+    <p>It will be delivered to UID: <span id="uidDisplay"></span></p>
+    <button onclick="closePopup()">OK</button>
   </div>
-</div>
+
+  <script>
+    function claimReward() {
+      const uid = document.getElementById("uidInput").value.trim();
+      if (uid === "") {
+        alert("Please enter your Free Fire UID to claim reward.");
+        return;
+      }
+
+      document.getElementById("uidDisplay").textContent = uid;
+      document.getElementById("popup").style.display = "block";
+      document.getElementById("overlay").style.display = "block";
+    }
+
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+      document.getElementById("overlay").style.display = "none";
+    }
+  </script>
 
 </body>
 </html>
