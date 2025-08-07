@@ -140,11 +140,7 @@
     <!-- Reward Block Example -->
     
 
-    <div class="reward-card">
-      <img src="https://via.placeholder.com/200x160?text=MP40+Skin" alt="MP40 Skin">
-      <h3>MP40 Gun Skin</h3>
-      <button onclick="claimReward()">Claim Now</button>
-    </div>
+    
 
     <div class="reward-card">
       <img src="https://via.placeholder.com/200x160?text=2000+Diamonds" alt="2000 Diamonds">
@@ -247,8 +243,47 @@
   <button onclick="claimReward()">Claim Now</button>
 </div>
 
-<!-- 🔻 Other rewards -->
-<div class="reward-card">
-  <h3>Gun Skin</h3>
+<style>
+  .reward-card {
+    width: 300px;
+    height: 400px;
+    border-radius: 10px;
+    padding: 15px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    margin: 10px auto;
+    background-color: #222;
+  }
+
+  /* ✅ Sirf MP40 card ke liye background */
+  .mp40-card {
+    background: url('https://raw.githubusercontent.com/workwithr2media-gif/Free-fire-rewards-/173feea7c8d07946aa450af531782f35e824a3b7/IMG_20250807_124908.jpg')
+                no-repeat center center;
+    background-size: cover;
+  }
+
+  .reward-card h3 {
+    margin: 0;
+    font-size: 20px;
+    text-shadow: 1px 1px 3px black;
+  }
+
+  .reward-card button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+</style>
+
+<!-- ✅ MP40 Wala reward card with background -->
+<div class="reward-card mp40-card">
+  <h3>Uchiha’s Legacy MP40</h3>
   <button onclick="claimReward()">Claim Now</button>
 </div>
