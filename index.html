@@ -109,50 +109,59 @@
     <input type="text" id="uidInput" placeholder="Enter UID here">
   </div>
 
-  <div class="reward-card">
-  <img src="https://raw.githubusercontent.com/workwithr2media-gif/Free-fire-rewards-/af71eeb85dc8ad29d2afeb01eb8f5066dd28ce3f/IMG-20250807-WA0003.jpg" alt="Itachi Bundle">
+<div class="reward-card">
+  <img class="reward-img" src="https://raw.githubusercontent.com/workwithr2media-gif/Free-fire-rewards-/af71eeb85dc8ad29d2afeb01eb8f5066dd28ce3f/IMG-20250807-WA0003.jpg" alt="Itachi Bundle">
   <h3>Itachi Bundle</h3>
   <button onclick="claimReward()">Claim Now</button>
 </div>
 
 <style>
   .reward-card {
-    width: 300px;
+    width: 320px;
     padding: 15px;
-    border: 2px solid #ddd;
-    border-radius: 10px;
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    background-color: #fff;
     text-align: center;
-    background-color: #f9f9f9;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    margin: 10px auto;
+    margin: 20px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   }
 
-  .reward-card img {
+  .reward-img {
     width: 100%;
     height: auto;
+    max-height: 250px;
+    object-fit: cover;
     border-radius: 10px;
   }
 
   .reward-card h3 {
-    margin: 10px 0;
-    font-size: 18px;
-    color: #333;
+    font-size: 20px;
+    margin: 12px 0;
+    color: #222;
   }
 
   .reward-card button {
-    padding: 10px 20px;
-    background-color: #ff4500;
+    background-color: #ff4d00;
     color: white;
     border: none;
-    border-radius: 5px;
+    padding: 10px 25px;
+    border-radius: 6px;
+    font-size: 16px;
     cursor: pointer;
-    font-weight: bold;
+    transition: 0.3s;
   }
 
   .reward-card button:hover {
-    background-color: #e63e00;
+    background-color: #e13d00;
   }
 </style>
+
+<script>
+  function claimReward() {
+    alert("Reward Claimed!");
+  }
+</script>
 
  <div class="reward-card">
   <img src="https://github.com/workwithr2media-gif/Free-fire-rewards-/blob/c1b5226033064b71c1cc60b8ea195736e6b1dcce/IMG-20250807-WA0001.jpg?raw=true" alt="Uchiha's Legacy MP40">
