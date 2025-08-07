@@ -24,170 +24,141 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Free Fire Event Rewards</title>
+  <title>Naruto Legacy Rewards</title>
   <style>
     body {
       margin: 0;
-      background: linear-gradient(to bottom, #0f0f0f, #1c1c1c);
       font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #290030, #1a0025);
+      background-image: url('https://i.imgur.com/QZQCJnb.png'); /* Purple Grid Background */
+      background-size: cover;
+      background-position: center;
       color: white;
       text-align: center;
     }
 
     header {
-      background-color: #111;
+      background-color: #1a1a1a;
       padding: 20px;
-      font-size: 24px;
-      color: #ffcc00;
+      font-size: 28px;
+      color: #ff66ff;
     }
 
     .container {
       padding: 20px;
     }
 
-    .uid-box {
-      margin: 20px 0;
-    }
-
-    input[type="text"] {
-      padding: 10px;
-      font-size: 16px;
-      width: 220px;
-      border-radius: 5px;
-      border: none;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      justify-items: center;
+      margin-top: 20px;
     }
 
     .reward-card {
-      background-color: #1c1c1c;
-      margin: 15px auto;
-      padding: 15px;
+      width: 100px;
+      padding: 10px;
+      background: #111;
       border-radius: 10px;
-      max-width: 300px;
-      box-shadow: 0 0 10px #ffcc00;
+      box-shadow: 0 0 10px #ff00ff;
     }
 
-    .image-placeholder {
+    .reward-card img {
       width: 100%;
-      height: 200px;
-      background-color: #444;
-      border-radius: 10px;
-      margin-bottom: 12px;
+      border-radius: 8px;
     }
 
-    .reward-card h3 {
-      font-size: 20px;
-      margin: 12px 0;
+    .reward-card p {
+      margin: 5px 0 0;
+      font-size: 14px;
       color: #fff;
     }
 
-    .reward-card button {
-      background-color: #ffcc00;
-      color: black;
+    .claim-button {
+      margin-top: 30px;
+      padding: 15px 40px;
+      font-size: 18px;
+      background: linear-gradient(to right, #f9d423, #ff4e50);
       border: none;
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-
-    .reward-card button:hover {
-      background-color: #ffaa00;
-    }
-
-    /* Popup */
-    .popup {
-      display: none;
-      position: fixed;
-      top: 30%;
-      left: 50%;
-      transform: translate(-50%, -30%);
-      background-color: #222;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px #00ff99;
-      z-index: 9999;
-    }
-
-    .popup h2 {
-      color: #00ff99;
-      margin-bottom: 10px;
-    }
-
-    .popup button {
-      margin-top: 15px;
-      padding: 8px 16px;
-      background-color: #00ff99;
-      border: none;
-      border-radius: 5px;
+      border-radius: 30px;
       cursor: pointer;
       color: black;
       font-weight: bold;
     }
 
-    .popup button:hover {
-      background-color: #00cc7a;
+    .claim-button:hover {
+      opacity: 0.9;
     }
   </style>
 </head>
 <body>
 
 <header>
-  🎉 Naruto Chapter 2 Rewards 🎁
+  🎁 Select Your Naruto Bundle 🎁
 </header>
 
 <div class="container">
-  <div class="uid-box">
-    <p>Enter Your Free Fire UID:</p>
-    <input type="text" id="uidInput" placeholder="Enter UID here">
+  <div class="grid">
+
+    <!-- 1 -->
+    <div class="reward-card">
+      <img src="https://i.imgur.com/YTQX9u7.jpg" alt="Pain Bundle">
+      <p>Pain Bundle</p>
+    </div>
+
+    <!-- 2 -->
+    <div class="reward-card">
+      <img src="https://i.imgur.com/egXfK5h.jpg" alt="Deidara Bundle">
+      <p>Deidara Bundle</p>
+    </div>
+
+    <!-- 3 -->
+    <div class="reward-card">
+      <img src="https://i.imgur.com/V9kWy9E.jpg" alt="Hidan Bundle">
+      <p>Hidan Bundle</p>
+    </div>
+
+    <!-- 4 -->
+    <div class="reward-card">
+      <img src="https://i.imgur.com/jpUibQD.jpg" alt="Kaguya Bundle">
+      <p>Kaguya Bundle</p>
+    </div>
+
+    <!-- 5 -->
+    <div class="reward-card">
+      <img src="https://i.imgur.com/HoQb1gG.jpg" alt="Sasuke Bundle">
+      <p>Sasuke Bundle</p>
+    </div>
+
+    <!-- 6 -->
+    <div class="reward-card">
+      <img src="https://i.imgur.com/ES1lK3j.jpg" alt="Tsunade Bundle">
+      <p>Tsunade Bundle</p>
+    </div>
+
+    <!-- 7 -->
+    <div class="reward-card">
+      <img src="https://i.imgur.com/txrxFGK.jpg" alt="Minato Bundle">
+      <p>Minato Bundle</p>
+    </div>
+
+    <!-- 8 (MP40 Uchiha) -->
+    <div class="reward-card">
+      <img src="https://i.imgur.com/yOcxFwA.jpg" alt="Uchiha MP40 Skin">
+      <p>Uchiha MP40 Skin</p>
+    </div>
+
+    <!-- 9 -->
+    <div class="reward-card">
+      <img src="https://i.imgur.com/rCdKr9L.jpg" alt="Itachi Bundle">
+      <p>Itachi Bundle</p>
+    </div>
+
   </div>
 
-  <!-- Reward 1: Itachi Bundle -->
-  <div class="reward-card">
-    <div class="image-placeholder"></div>
-    <h3>Itachi Bundle</h3>
-    <button onclick="claimReward()">Claim Now</button>
-  </div>
-
-  <!-- Reward 2: Uchiha's Legacy MP40 -->
-  <div class="reward-card">
-    <div class="image-placeholder"></div>
-    <h3>Uchiha's Legacy MP40</h3>
-    <button onclick="claimReward()">Claim Now</button>
-  </div>
-
-  <!-- Reward 3: 2000 Diamond Pack -->
-  <div class="reward-card">
-    <div class="image-placeholder"></div>
-    <h3>2000 Diamond Pack</h3>
-    <button onclick="claimReward()">Claim Now</button>
-  </div>
+  <button class="claim-button">CLAIM NOW</button>
 </div>
-
-<!-- Popup -->
-<div class="popup" id="popupBox">
-  <h2>🎉 Congratulations!</h2>
-  <p>Your reward has been sent to UID: <span id="showUid"></span></p>
-  <button onclick="closePopup()">Close</button>
-</div>
-
-<script>
-  function claimReward() {
-    var uid = document.getElementById("uidInput").value;
-    if(uid === "") {
-      alert("Please enter your Free Fire UID to claim the reward!");
-    } else {
-      document.getElementById("showUid").innerText = uid;
-      document.getElementById("popupBox").style.display = "block";
-      setTimeout(function(){
-        document.getElementById("popupBox").style.display = "none";
-      }, 4000);
-    }
-  }
-
-  function closePopup() {
-    document.getElementById("popupBox").style.display = "none";
-  }
-</script>
 
 </body>
 </html>
