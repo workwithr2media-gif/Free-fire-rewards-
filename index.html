@@ -138,11 +138,7 @@
 
   <div class="rewards-container">
     <!-- Reward Block Example -->
-    <div class="reward-card">
-      <img src="https://via.placeholder.com/200x160?text=Itachi+Bundle" alt="Itachi Bundle">
-      <h3>Itachi Bundle</h3>
-      <button onclick="claimReward()">Claim Now</button>
-    </div>
+    
 
     <div class="reward-card">
       <img src="https://via.placeholder.com/200x160?text=MP40+Skin" alt="MP40 Skin">
@@ -210,9 +206,6 @@
   .reward-card {
     width: 300px;
     height: 400px;
-    background: url('https://raw.githubusercontent.com/workwithr2media-gif/Free-fire-rewards-/173feea7c8d07946aa450af531782f35e824a3b7/IMG-20250807-WA0003.jpg')
-                no-repeat center center;
-    background-size: cover;
     border-radius: 10px;
     padding: 15px;
     color: white;
@@ -221,6 +214,14 @@
     justify-content: flex-end;
     box-shadow: 0 4px 8px rgba(0,0,0,0.5);
     margin: 10px auto;
+    background-color: #222; /* fallback bg for others */
+  }
+
+  /* Only Itachi bundle card background */
+  .itachi-card {
+    background: url('https://raw.githubusercontent.com/workwithr2media-gif/Free-fire-rewards-/173feea7c8d07946aa450af531782f35e824a3b7/IMG-20250807-WA0003.jpg')
+                no-repeat center center;
+    background-size: cover;
   }
 
   .reward-card h3 {
@@ -240,7 +241,14 @@
   }
 </style>
 
-<div class="reward-card">
+<!-- ✅ Only Itachi bundle -->
+<div class="reward-card itachi-card">
   <h3>Itachi Bundle</h3>
+  <button onclick="claimReward()">Claim Now</button>
+</div>
+
+<!-- 🔻 Other rewards -->
+<div class="reward-card">
+  <h3>Gun Skin</h3>
   <button onclick="claimReward()">Claim Now</button>
 </div>
