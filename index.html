@@ -1,328 +1,154 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Free Fire Rewards</title>
-  <style>
-    body {
-      background-color: #0f0f0f;
-      color: #fff;
-      text-align: center;
-      padding-top: 100px;
-      font-family: Arial;
-    }
-    h1 {
-      color: #ffcc00;
-    }
-  </style>
-</head>
-<body>
-  <h1>Welcome to Free Fire Rewards!</h1>
-  <p>Claim free bundles, skins & more 🔥</p>
-</body>
-</html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Free Fire Rewards</title>
   <style>
     body {
-      margin: 0;
-      background: linear-gradient(to bottom, #0f0f0f, #1c1c1c);
       font-family: Arial, sans-serif;
-      color: white;
       text-align: center;
-    }
-
-    header {
       background: #111;
-      padding: 20px;
-      font-size: 28px;
-      font-weight: bold;
+      color: white;
     }
-
-    .uid-section {
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      max-width: 600px;
       margin: 20px auto;
     }
-
-    .uid-section input {
-      padding: 10px;
-      width: 250px;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
-    }
-
-    .rewards-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 20px;
-    }
-
-    .reward-card {
+    .item {
       background: #222;
+      padding: 10px;
       border-radius: 10px;
-      margin: 15px;
-      padding: 15px;
-      width: 200px;
-      box-shadow: 0 0 10px #000;
-    }
-
-    .reward-card img {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-      border-radius: 5px;
-    }
-
-    .reward-card h3 {
-      margin: 10px 0;
-      font-size: 18px;
-    }
-
-    .reward-card button {
-      padding: 10px 15px;
-      background: #00c853;
-      color: white;
-      border: none;
-      border-radius: 5px;
       cursor: pointer;
+      transition: transform 0.3s;
+    }
+    .item:hover {
+      transform: scale(1.05);
+    }
+    .item img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .caption {
+      margin-top: 5px;
       font-weight: bold;
     }
-
-    .popup {
-      display: none;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: #1e1e1e;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 20px #00ff88;
-      z-index: 9999;
-    }
-
-    .popup h2 {
-      color: #00ff88;
-      margin-bottom: 15px;
-    }
-
-    .popup button {
-      padding: 8px 20px;
-      margin-top: 10px;
-      background: #444;
-      color: white;
-      border: none;
+    #uid {
+      padding: 8px;
+      margin: 10px;
+      width: 60%;
       border-radius: 5px;
+      border: none;
+      outline: none;
     }
-
-    .overlay {
+    button {
+      padding: 10px 20px;
+      background: #ff4747;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+    /* Popup Styling */
+    .popup {
       display: none;
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(0,0,0,0.6);
-      z-index: 9998;
+      background: rgba(0,0,0,0.7);
+      justify-content: center;
+      align-items: center;
+    }
+    .popup-content {
+      background: white;
+      color: black;
+      padding: 20px;
+      border-radius: 10px;
+      animation: zoomIn 0.5s ease;
+      text-align: center;
+    }
+    @keyframes zoomIn {
+      from {transform: scale(0);}
+      to {transform: scale(1);}
     }
   </style>
 </head>
 <body>
 
-  <header>🎁 Naruto Chapter 2 Rewards 🎁</header>
-
-  <div class="uid-section">
-    <input type="text" id="uidInput" placeholder="Enter your Free Fire UID">
-  </div>
-
-  <div class="rewards-container">
-    <!-- Reward Block Example -->
-    
-
+  <h1>Free Fire Rewards</h1>
+  <input type="text" id="uid" placeholder="Enter your UID">
   
-    <!-- Add more blocks as needed -->
+  <div class="grid">
+    <div class="item" data-name="Itachi Bundle">
+      <img src="531CA1B6-B761-40AB-A32C-D96EF234EFA4.jpeg">
+      <div class="caption">Itachi Bundle</div>
+    </div>
+    <div class="item" data-name="Madara Bundle">
+      <img src="E3001DF1-AD11-4CEE-9638-A9069BFF5B2C.jpeg">
+      <div class="caption">Madara Bundle</div>
+    </div>
+    <div class="item" data-name="Pain Bundle">
+      <img src="3F011C5A-068F-4BA9-98D5-C2C1AE41AAFE.jpeg">
+      <div class="caption">Pain Bundle</div>
+    </div>
+    <div class="item" data-name="Obito Bundle">
+      <img src="E3A40F60-0849-486E-86C4-C3C4660C0198.jpeg">
+      <div class="caption">Obito Bundle</div>
+    </div>
+    <div class="item" data-name="Uchiha’s Legacy MP40">
+      <img src="952B325C-896A-4C41-A929-1D5E2A52A0FA.jpeg">
+      <div class="caption">Uchiha’s MP40</div>
+    </div>
+    <div class="item" data-name="2000 Diamonds">
+      <img src="0E05AF87-0FE0-4CE5-AD3E-26F30BDB32B2.jpeg">
+      <div class="caption">2000 Diamonds</div>
+    </div>
   </div>
 
-  <!-- Fake Popup -->
-  <div class="overlay" id="overlay"></div>
+  <button onclick="claimReward()">Claim Now</button>
+
   <div class="popup" id="popup">
-    <h2>🎉 Congratulations!</h2>
-    <p>Your reward has been claimed successfully.</p>
-    <p>It will be delivered to UID: <span id="uidDisplay"></span></p>
-    <button onclick="closePopup()">OK</button>
+    <div class="popup-content">
+      <h2>🎉 Congratulations! 🎉</h2>
+      <p id="rewardText"></p>
+      <button onclick="closePopup()">Close</button>
+    </div>
   </div>
 
   <script>
+    let selectedReward = null;
+
+    document.querySelectorAll('.item').forEach(item => {
+      item.addEventListener('click', () => {
+        selectedReward = item.getAttribute('data-name');
+        document.querySelectorAll('.item').forEach(el => el.style.border = "none");
+        item.style.border = "2px solid #ff4747";
+      });
+    });
+
     function claimReward() {
-      const uid = document.getElementById("uidInput").value.trim();
-      if (uid === "") {
-        alert("Please enter your Free Fire UID to claim reward.");
+      const uid = document.getElementById("uid").value;
+      if (!uid) {
+        alert("Please enter your UID!");
         return;
       }
-
-      document.getElementById("uidDisplay").textContent = uid;
-      document.getElementById("popup").style.display = "block";
-      document.getElementById("overlay").style.display = "block";
+      if (!selectedReward) {
+        alert("Please select a reward first!");
+        return;
+      }
+      document.getElementById("rewardText").innerText = `You have claimed: ${selectedReward}`;
+      document.getElementById("popup").style.display = "flex";
     }
 
     function closePopup() {
       document.getElementById("popup").style.display = "none";
-      document.getElementById("overlay").style.display = "none";
     }
   </script>
 
 </body>
 </html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Background Image Page</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      background: url('https://raw.githubusercontent.com/workwithr2media-gif/Free-fire-rewards-/78b9dea13e31ac52db6fa6e46dd18f4db88bd2e9/IMG-20250807-WA0004.jpg') 
-                  no-repeat center center fixed;
-      background-size: cover;
-    }
-  </style>
-</head>
-<body>
-</body>
-</html>
-<style>
-  .reward-card {
-    width: 300px;
-    height: 400px;
-    border-radius: 10px;
-    padding: 15px;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
-    margin: 10px auto;
-    background-color: #222; /* fallback bg for others */
-  }
-
-  /* Only Itachi bundle card background */
-  .itachi-card {
-    background: url('https://raw.githubusercontent.com/workwithr2media-gif/Free-fire-rewards-/173feea7c8d07946aa450af531782f35e824a3b7/IMG-20250807-WA0003.jpg')
-                no-repeat center center;
-    background-size: cover;
-  }
-
-  .reward-card h3 {
-    margin: 0;
-    font-size: 20px;
-    text-shadow: 1px 1px 3px black;
-  }
-
-  .reward-card button {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #ffcc00;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-</style>
-
-<!-- ✅ Only Itachi bundle -->
-<div class="reward-card itachi-card">
-  <h3>Pain Tendo Bundle</h3>
-  <button onclick="claimReward()">Claim Now</button>
-</div>
-
-<style>
-  .reward-card {
-    width: 100px;
-    height: 200px;
-    border-radius: 10px;
-    padding: 15px;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
-    margin: 10px auto;
-    background-color: #222;
-  }
-
-  /* ✅ Sirf MP40 card ke liye background */
-  .mp40-card {
-    background: url('https://raw.githubusercontent.com/workwithr2media-gif/Free-fire-rewards-/173feea7c8d07946aa450af531782f35e824a3b7/IMG_20250807_124908.jpg')
-                no-repeat center center;
-    background-size: cover;
-  }
-
-  .reward-card h3 {
-    margin: 0;
-    font-size: 20px;
-    text-shadow: 1px 1px 3px black;
-  }
-
-  .reward-card button {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #ffcc00;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-</style>
-
-<!-- ✅ MP40 Wala reward card with background -->
-<div class="reward-card mp40-card">
-  <h3>Obito Bundle</h3>
-  <button onclick="claimReward()">Claim Now</button>
-</div>
-<style>
-  .reward-card {
-    width: 100px;
-    height: 200px;
-    border-radius: 10px;
-    padding: 15px;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
-    margin: 10px auto;
-    background-color: #222;
-    text-align: center;
-  }
-
-  .reward-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-  }
-
-  .reward-card h3 {
-    margin: 10px 0 0;
-    font-size: 20px;
-  }
-
-  .reward-card button {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #ffcc00;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-</style>
-
-<!-- ✅ 2000 Diamonds wala reward with NEW IMAGE -->
-<div class="reward-card">
-  <img src="https://raw.githubusercontent.com/workwithr2media-gif/Free-fire-rewards-/173feea7c8d07946aa450af531782f35e824a3b7/IMG_20250807_124826.jpg" alt="2000 Diamonds">
-  <h3>2000 Diamonds</h3>
-  <button onclick="claimReward()">Claim Now</button>
-</div>
